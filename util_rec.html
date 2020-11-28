@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <script src="lib/main.js" type="text/javascript"></script>
+  </head>
+  <title>Receiver</title>
+  <body onload="getBloodSamples()">
+    <h1>Receiver HOME PAGE</h1>
+    <button onclick="logout()"">Logout</button>
+    <table id="table" style="width: 50%">
+      <thead>
+        <th>Blood Group</th>
+        <th>Units Available</th>
+        <th>Collection Date/Time</th>
+        <th>Hospital Name</th>
+        <th>Hospital Id</th>
+        <th>Ask</th>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </body>
+</html>

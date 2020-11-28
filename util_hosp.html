@@ -1,0 +1,39 @@
+<html>
+  <title>Hospital</title>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <script src="lib/main.js" type="text/javascript"></script>
+  </head>
+  <body onload="loginCheck(); getReceiverreqs()">
+    <button onclick="logout()"">Logout</button>
+    <form onsubmit="submitBloodInfo(this); return false;" method="post">
+      <label for="type">Type:</label><br />
+      <input type="text" id="type" name="type" value="xxx" /><br />
+      <label for="units">Units :</label><br />
+      <input type="text" id="units" name="units" value="xxx" /><br />
+      <label for="date">Collection Date:</label><br />
+      <input type="text" id="date" name="date" value="xxx" /><br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <br />
+    <br />
+    <table id="tableHosp" style="width: 50%">
+      <thead>
+        <th>Name:</th>
+        <th>Contact</th>
+        <th>Blood Type</th>
+        <th>Units Required:</th>
+        <th>Date/Time</th>
+      </thead>
+      <tbody id="tbodyHosp"></tbody>
+    </table>
+  </body>
+</html>
