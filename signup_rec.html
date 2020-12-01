@@ -1,5 +1,5 @@
 <html>
-  <title>Client</title>
+  <title>Signup</title>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,16 +23,18 @@
   </head>
   <header>
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand btn btn-primary btn-header" href="util_rec.html">
+      <a class="navbar-brand btn btn-primary btn-header header-btn" href="util_rec.html">
         Blood Availaible
       </a>
       <div class="ml-auto">
         <a
-          class="navbar-brand btn btn-primary btn-header"
+          class="navbar-brand btn btn-primary btn-header header-btn"
           href="login.html"
           class="header-data"
         >
+        <div class="">
           Login
+        </div class="">
         </a>
         <a
           class="navbar-brand btn btn-primary btn-header"
@@ -44,6 +46,8 @@
     </nav>
   </header>
   <body onload="alreadyLoggedIn()" class="text-center">
+    <div id="loader" class="center"></div>
+
     <div id="" class="form signup-wrapper">
       <form
         onsubmit="signupRec(this); return false"
@@ -97,14 +101,20 @@
           class="form-control col-md-3 d-inline-flex p-2"
           id="password"
           name="password"
+          onkeyup="hideErrorMsg(this)"
           value=""
           required
         />
+        <small id="passwordHelpBlock" class="form-text text-muted col-md-3 helperText">
+          Your password must be 6-20 characters long, must contain letters and
+          numbers .
+        </small>
         <div class="input-group-addon">
           <a href="" onClick="togglePassword(); return false;"
             ><i id="eyeIcon" class="fa fa-eye-slash" aria-hidden="true"></i>
           </a>
         </div>
+
         <br />
         <input
           type="submit"
@@ -113,5 +123,16 @@
         />
       </form>
     </div>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
   </body>
 </html>

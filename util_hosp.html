@@ -44,6 +44,8 @@
     </nav>
   </header>
   <body onload="loginCheck(); getReceiverreqs()" class="text-center">
+    <div id="loader" class="center"></div>
+
     <form
       onsubmit="submitBloodInfo(this); return false;"
       class="form-group"
@@ -63,6 +65,7 @@
         type="text"
         id="units"
         name="units"
+        onkeyup="hideErrorMsg(this)"
         value=""
       /><br />
       <label for="date">Collection Date:</label><br />
@@ -96,5 +99,16 @@
         </table>
       </div>
     </div>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
   </body>
 </html>
