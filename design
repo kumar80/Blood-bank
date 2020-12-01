@@ -1,0 +1,29 @@
+Blood details : {
+    type : "",
+    Collection Date/Time:  "",
+    White Blood Cell (WBC) 6.9 K/mcL 4.8-10.8
+    Red Blood Cell (RBC) 1.8 L M/mcL 4.7-6.1
+    Platelet count 180 K/mcL 150-450 
+    units
+}
+Blood requests : {
+    name :
+    Blood group:
+    phone:
+    address:
+    age :
+}
+
+hosp: {
+
+}
+
+receivers: {
+    name :
+    password : 
+    Blood group :
+    phone :
+    address :
+    age :
+    email
+}

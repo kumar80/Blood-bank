@@ -1,0 +1,64 @@
+.radio-input-login {
+  margin-top: 20px;
+}
+.btn {
+  margin-left: 10px;
+}
+.login-wrapper {
+  display: flex;
+  margin-left: 500px;
+}
+.btn-signup {
+  margin-top: 10px;
+}
+
+.signup-wrapper {
+  margin-top: 50px;
+}
+
+#searchBar {
+  background-image: url("../assets/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.btn-header {
+  font-size: 2vw;
+}
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.logo {
+  text-align: center;
+}
+img {
+  max-width: 200px;
+  width: 100%;
+  margin: 0em auto 0em auto;
+}
