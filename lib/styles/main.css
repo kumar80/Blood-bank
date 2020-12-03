@@ -62,7 +62,19 @@ img {
   margin: 0em auto 0em auto;
 }
 
-.helperText{
+.helperText {
   margin-inline: auto;
 }
 
+.table-responsive {
+  max-height: 660px;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+}
+.error {
+  color: red;
+  display: none;
+}

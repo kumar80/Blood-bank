@@ -72,7 +72,7 @@
         placeholder="Search for Blood Types.."
         title="Search.."
       />
-      <div class="table-responsive">
+      <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
         <table
           id="bloodInfoTable"
           class="table table-bordered table-striped table-hover col"
@@ -81,13 +81,13 @@
             Available BloodSamples
           </caption>
           <thead class="thead-dark">
-            <th scope="col">#</th>
-            <th scope="col">Blood Group</th>
-            <th scope="col">Units Available</th>
-            <th scope="col">Collection Date/Time</th>
-            <th scope="col">Hospital Name</th>
-            <th scope="col">Hospital Id</th>
-            <th scope="col">Request</th>
+            <th scope="col" class="table-header">#</th>
+            <th scope="col" class="table-header">Blood Group</th>
+            <th scope="col" class="table-header">Units Available</th>
+            <th scope="col" class="table-header">Collection Date/Time</th>
+            <th scope="col" class="table-header">Hospital Name</th>
+            <th scope="col" class="table-header">Hospital Id</th>
+            <th scope="col" class="table-header">Request</th>
           </thead>
           <tbody id="tbody"></tbody>
         </table>

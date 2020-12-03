@@ -23,7 +23,10 @@
   </head>
   <header>
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand btn btn-primary btn-header header-btn" href="util_rec.html">
+      <a
+        class="navbar-brand btn btn-primary btn-header header-btn"
+        href="util_rec.html"
+      >
         Blood Availaible
       </a>
       <div class="ml-auto">
@@ -32,9 +35,7 @@
           href="login.html"
           class="header-data"
         >
-        <div class="">
-          Login
-        </div class="">
+          <div class="">Login</div>
         </a>
         <a
           class="navbar-brand btn btn-primary btn-header"
@@ -90,11 +91,14 @@
         <input
           type="text"
           class="form-control col-md-3 d-inline-flex p-2"
-          id="blood"
+          id="bloodType"
           name="blood"
           value=""
+          onkeyup="hideErrorMsg(this)"
           required
-        /><br />
+        />
+        <div class="invalid-feedback">Please enter a valid blood type</div>
+        <br />
         <label for="inputPassword4">Password:</label><br />
         <input
           type="password"
@@ -105,7 +109,10 @@
           value=""
           required
         />
-        <small id="passwordHelpBlock" class="form-text text-muted col-md-3 helperText">
+        <small
+          id="passwordHelpBlock"
+          class="form-text text-muted col-md-3 helperText"
+        >
           Your password must be 6-20 characters long, must contain letters and
           numbers .
         </small>
@@ -122,6 +129,7 @@
           class="btn btn-primary btn-signup"
         />
       </form>
+      <p style="color: red; display: none" id="error">Signup Failed :(</p>
     </div>
     <script>
       document.onreadystatechange = function () {

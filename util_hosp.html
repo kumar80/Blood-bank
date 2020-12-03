@@ -46,40 +46,44 @@
       >
     </nav>
   </header>
-  <body onload="loginCheck(); getReceiverreqs()" class="text-center">
+  <body onload="loginCheck(); getReceiverreqs()" class="">
     <div id="loader" class="center"></div>
-
+    <strong style="margin-left: 191px">Submit Blood Info here.</strong>
+    <br />
     <form
       onsubmit="submitBloodInfo(this); return false;"
       class="form-group"
       method="post"
     >
-      <label for="type">Blood Type:</label><br />
-      <input
-        class="form-control col-md-2 d-inline-flex p-2"
-        type="text"
-        id="type"
-        name="type"
-        value=""
-      /><br />
-      <label for="units">Units :</label><br />
-      <input
-        class="form-control col-md-2 d-inline-flex p-2"
-        type="text"
-        id="units"
-        name="units"
-        onkeyup="hideErrorMsg(this)"
-        value=""
-      /><br />
-      <label for="date">Collection Date:</label><br />
-      <input
-        class="form-control col-md-2 d-inline-flex p-2"
-        type="date"
-        id="date"
-        name="date"
-      /><br />
-      <br />
-      <input type="submit" value="Submit" class="btn btn-primary" />
+      <div class="row" style="margin-left: 191px">
+        <div class="col-md-2">
+          <input
+            type="text"
+            id="bloodType"
+            class="form-control"
+            placeholder="Blood Type"
+            onkeyup="hideErrorMsg(this)"
+          />
+          <div class="invalid-feedback">Please enter a valid blood type.</div>
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            id="units"
+            class="form-control"
+            placeholder="Units Availaible"
+            onkeyup="hideErrorMsg(this)"
+          />
+          <div class="invalid-feedback">Please enter a valid number.</div>
+        </div>
+        <div class="col-md-2">
+          <input type="date" class="form-control" id="date" />
+          <div class="invalid-feedback">Please enter a valid date.</div>
+        </div>
+        <div class="col-md-2">
+          <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+      </div>
     </form>
     <br />
     <br />
@@ -91,12 +95,12 @@
           class="table table-bordered table-striped table-hover"
         >
           <thead class="thead-dark">
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Contact</th>
-            <th scope="col">Blood Type</th>
-            <th scope="col">Units Required</th>
-            <th scope="col">Date/Time</th>
+            <th scope="col" class="table-header">#</th>
+            <th scope="col" class="table-header">Name</th>
+            <th scope="col" class="table-header">Contact</th>
+            <th scope="col" class="table-header">Blood Type</th>
+            <th scope="col" class="table-header">Units Required</th>
+            <th scope="col" class="table-header">Date/Time</th>
           </thead>
           <tbody id="tbodyHosp"></tbody>
         </table>
