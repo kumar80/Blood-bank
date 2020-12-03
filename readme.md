@@ -17,4 +17,3 @@ import -> choose file -> select "blood_bank_db.sql" file -> click go
 visit http://localhost/
 
 
-for any queries you can mail me at chandankumar80567@gmail.com or call 9304158755
