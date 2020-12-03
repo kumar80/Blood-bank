@@ -40,9 +40,11 @@ if ($reqType == "fetch_Blood_Data" &&  $reqMethod == "POST") {
     $uid = uniqid();
     $table = $GLOBALS["tableRequests"];
 
-    $sql = "SELECT * FROM `$table` WHERE receive_name='$receiver->name' && hospital_id=$hospitalId";
+    $sql = "SELECT * FROM `$table` WHERE receiver_name='$receiver->name' && hospital_id='$hospitalId'";
     $check = mysqli_query($conn, $sql);
-    if ($check) {
+    $num = mysqli_num_rows($check);
+
+    if ($num==0) {
         $sql = "INSERT INTO `$table` (`receiver_name`,`units`,`id`,`hospital_id`,`phone`,`receiver_blood_type`)
                             VALUES ('$receiver->name','$unitsReq','$uid','$hospitalId','$receiver->phone','$receiver->blood_type')";
         $result = mysqli_query($conn, $sql);
@@ -53,7 +55,7 @@ if ($reqType == "fetch_Blood_Data" &&  $reqMethod == "POST") {
             echo json_encode(["msg" => "error requesting", "ok" => 0]);
         }
     } else {
-        echo json_encode(["msg" => "Already requested to same hospital", "ok" => 0,"rec"=>$receiver]);
+        echo json_encode(["msg" => "Already requested to same hospital", "ok" => 0,"rec"=>$sql]);
     }
 } else if ($reqMethod == "POST" && $reqType == "getReceiverReq") {
 
